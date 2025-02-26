@@ -5,8 +5,7 @@ import atexit
 connection = None
 channel = None
 
-# Empty the queue, if the terminal shuts down we clean the cure 
-
+# Empty the queue if the terminal shuts down 
 def cleanup():
     """Remove the control message when the server stops."""
     print("\n Cleaning up control queue...")
@@ -15,8 +14,7 @@ def cleanup():
         connection.close()
     print("Cleanup complete. Control queue is empty.")
 
-# Starting a Ping Pong Sequnce 
-
+# Starting a PingPong sequence 
 def on_received_message(ch, method, properties, body):
     message = body.decode()
     print(f"Received {message}")

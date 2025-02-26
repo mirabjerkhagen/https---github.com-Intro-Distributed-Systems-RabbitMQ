@@ -14,7 +14,7 @@ def send_push():
         print("Sorry, PingPong is already in action.")
     else:
 
-        # We push for the first time and make the 
+        # We push for the first time and make the control queue active 
         channel.basic_publish(exchange='',
                               routing_key='pingpong_control',
                               body='active')
